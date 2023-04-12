@@ -19,7 +19,7 @@ class NewsViewModel(
         getBreakingNews("us")
     }
 
-    fun getBreakingNews(countryCode: String) = viewModelScope.launch {
+    private fun getBreakingNews(countryCode: String) = viewModelScope.launch {
         breakingNews.postValue(Resource.Loading())
         val response = newsRepository.getBreakingNews(countryCode, breakingNewsPage)
         breakingNews.postValue(handleBreakingNewsResponse(response))

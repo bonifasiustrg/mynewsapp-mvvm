@@ -11,3 +11,4 @@ class NewsViewModelProviderFactory(
         return NewsViewModel(newsRepository) as T
     }
 }
+
